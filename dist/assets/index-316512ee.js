@@ -11138,7 +11138,7 @@ const Ox = (e, t) => (Ja(e) ? new jx(t, { enableHardwareAcceleration: !1 }) : ne
                   children: [
                     C.jsx('div', { className: 'flex w-full justify-end', children: C.jsx('img', { src: $x, alt: 'close', className: 'w-[22px] h-[22px] object-contain cursor-pointer', onClick: () => r(!n) }) }),
                     C.jsx('ul', {
-                      className: 'list-none flex flex-col -gap-[1rem] items-start justify-end mt-[10rem] -ml-[35px]',
+                      className: 'list-none flex flex-col -gap-[1rem] items-end justify-end mt-[10rem]',
                       children: _f.map((i) =>
                         C.jsx(
                           'li',
