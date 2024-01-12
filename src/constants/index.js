@@ -120,24 +120,17 @@ const technologies = [
 const experiences = [
   {
     title: 'Front-End Developer',
-    company_name: 'Cover Hunt',
+    company_name: 'Sevenpion',
     icon: coverhunt,
     iconBg: '#333333',
-    date: 'Aug 2021 - Feb 2022',
+    date: 'Oct 2022 - Jan 2023',
   },
   {
-    title: 'Mentor (Volunteer)',
-    company_name: 'Microverse',
+    title: 'Back-End Developer',
+    company_name: 'Sevenpion',
     icon: microverse,
     iconBg: '#333333',
-    date: 'Mar 2022 - May 2022',
-  },
-  {
-    title: 'Junior Software Engineer',
-    company_name: 'Kelhel',
-    icon: kelhel,
-    iconBg: '#333333',
-    date: 'May 2022 - Oct 2022',
+    date: 'Oct 2022 - Jan 2022',
   },
   {
     title: 'Full Stack Developer',
@@ -151,7 +144,7 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'Peparprov jateng 2023',
+    name: 'PEPARPROV',
     description: 'A Sport Event for Paralympic Week IV Central Java Province Pati Regency 2023.',
     tags: [
       {
@@ -237,29 +230,6 @@ const projects = [
     image: movie,
     repo: 'https://github.com/shaqdeff/Movie-Metro',
     demo: 'https://movie-metro.netlify.app/',
-  },
-  {
-    id: 'project-5',
-    name: 'Nyeusi Fest Site',
-    description:
-      'This is a demo concert website for a music festival called Nyeusi.',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: nyeusi,
-    repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
-    demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
   },
 ];
 
