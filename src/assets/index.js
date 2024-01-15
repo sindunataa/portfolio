@@ -39,13 +39,13 @@ import laravel from './tech/laravel.png';
 
 import coverhunt from './company/coverhunt.png';
 import dcc from './company/dcc.png';
-import kelhel from './company/kelhel.png';
+import sevenpion from './company/sevenpion.png';
 import microverse from './company/microverse.png';
 
 import peparprov from './projects/peparprov.png';
-import leaderboard from './projects/leaderboard.png';
-import math from './projects/math-magicians.png';
-import movie from './projects/movie-metro.png';
+import imagestock from './projects/imagestock.png';
+import xynpict from './projects/xynpict.png';
+import portfolio from './projects/portfolio-v2.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
 
@@ -85,13 +85,13 @@ export {
   tailwind,
   php,
   peparprov,
-  leaderboard,
-  math,
-  movie,
+  imagestock,
+  xynpict,
+  portfolio,
   nyeusi,
   space,
   coverhunt,
   dcc,
-  kelhel,
+  sevenpion,
   microverse,
 };

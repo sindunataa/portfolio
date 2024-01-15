@@ -17,14 +17,14 @@ import {
   laravel,
   python,
   peparprov,
-  leaderboard,
-  math,
-  movie,
+  imagestock,
+  xynpict,
+  portfolio,
   nyeusi,
   space,
   coverhunt,
   dcc,
-  kelhel,
+  sevenpion,
   microverse,
 } from '../assets';
 
@@ -119,31 +119,47 @@ const technologies = [
 
 const experiences = [
   {
-    title: 'Front-End Developer',
+    title: 'Backend Developer Internship',
     company_name: 'Sevenpion',
-    icon: coverhunt,
+    icon: sevenpion,
     iconBg: '#333333',
     date: 'Oct 2022 - Jan 2023',
   },
   {
-    title: 'Back-End Developer',
+    title: 'Fullstack Developer Freelancer',
     company_name: 'Sevenpion',
-    icon: microverse,
+    icon: sevenpion,
     iconBg: '#333333',
-    date: 'Oct 2022 - Jan 2022',
-  },
-  {
-    title: 'Full Stack Developer',
-    company_name: 'Diversity Cyber Council',
-    icon: dcc,
-    iconBg: '#333333',
-    date: 'Sep 2022 - Present',
+    date: 'April 2023 - Present',
   },
 ];
 
 const projects = [
   {
     id: 'project-1',
+    name: 'Imagestock',
+    description:
+      'An innovative and efficient platform to manage and display your image galleries.',
+    tags: [
+      {
+        name: 'laravel',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'restapi',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'scss',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: imagestock,
+    repo: 'https://github.com/sindunataa/laravel-image-stock',
+    demo: 'http://mygallery.wuaze.com/',
+  },
+  {
+    id: 'project-2',
     name: 'PEPARPROV',
     description: 'A Sport Event for Paralympic Week IV Central Java Province Pati Regency 2023.',
     tags: [
@@ -161,36 +177,13 @@ const projects = [
       },
     ],
     image: peparprov,
-    repo: 'https://github.com/shaqdeff/KomiKult',
+    repo: 'https://github.com/sindunataa/npc-jateng',
     demo: 'https://peparprov.npcjateng.com/',
   },
   {
-    id: 'project-2',
-    name: 'Leaderboard',
-    description:
-      'A Sport Event for Paralympic Week IV Central Java Province Pati Regency 2023.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'restapi',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'scss',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: leaderboard,
-    repo: 'https://github.com/shaqdeff/Leaderboard',
-    demo: 'https://shaqdeff.github.io/Leaderboard/',
-  },
-  {
     id: 'project-3',
-    name: 'Math Magicians',
-    description: 'This is a single-page calculator app built with React',
+    name: 'xynpict',
+    description: 'Discover beauty in an instant with an easy-to-navigate interface.',
     tags: [
       {
         name: 'nextjs',
@@ -205,14 +198,14 @@ const projects = [
         color: 'pink-text-gradient',
       },
     ],
-    image: math,
-    repo: 'https://github.com/shaqdeff/Math-Magicians',
-    demo: 'https://inspiring-medovik-37d3b3.netlify.app/',
+    image: xynpict,
+    repo: 'https://github.com/sindunataa/xynpict',
+    demo: 'http://xynpict.wuaze.com/',
   },
   {
     id: 'project-4',
-    name: 'Movie Metro',
-    description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
+    name: 'Portfolio-v2',
+    description: `Welcome to the world of creation and innovation! My portfolio, powered by Next.js,`,
     tags: [
       {
         name: 'nextjs',
@@ -227,9 +220,9 @@ const projects = [
         color: 'pink-text-gradient',
       },
     ],
-    image: movie,
-    repo: 'https://github.com/shaqdeff/Movie-Metro',
-    demo: 'https://movie-metro.netlify.app/',
+    image: portfolio,
+    repo: 'https://github.com/sindunataa/next-porto',
+    demo: 'https://natacode.netlify.app/',
   },
 ];
 
