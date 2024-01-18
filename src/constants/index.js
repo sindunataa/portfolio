@@ -117,17 +117,17 @@ const technologies = [
 const experiences = [
   {
     title: 'Backend Developer Internship',
-    company_name: 'Sevenpion',
+    company_name: 'PT Semesta Ruang Inovasi',
     icon: sevenpion,
     iconBg: '#333333',
-    date: 'Oct 2022 - Jan 2023',
+    date: 'Sept 2022 - Jan 2023',
   },
   {
     title: 'Fullstack Developer Freelancer',
-    company_name: 'Sevenpion',
+    company_name: 'PT Semesta Ruang Inovasi',
     icon: sevenpion,
     iconBg: '#333333',
-    date: 'April 2023 - Present',
+    date: 'March 2023 - Sept 2023',
   },
 ];
 
