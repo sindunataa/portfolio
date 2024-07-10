@@ -25,6 +25,7 @@ import {
   coverhunt,
   dcc,
   sevenpion,
+  balitower,
   microverse,
 } from '../assets';
 
@@ -126,6 +127,13 @@ const experiences = [
     title: 'Fullstack Developer Freelancer',
     company_name: 'PT Semesta Ruang Inovasi',
     icon: sevenpion,
+    iconBg: '#333333',
+    date: 'March 2023 - Sept 2023',
+  },
+  {
+    title: 'ANALYST & APL DEVELOPMENT - BSS Developer',
+    company_name: 'PT Bali Towerindo Sentra Tbk',
+    icon: balitower,
     iconBg: '#333333',
     date: 'March 2023 - Sept 2023',
   },

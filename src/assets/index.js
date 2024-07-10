@@ -41,6 +41,7 @@ import coverhunt from './company/coverhunt.png';
 import dcc from './company/dcc.png';
 import sevenpion from './company/sevenpion.png';
 import microverse from './company/microverse.png';
+import balitower from './company/balitower.png';
 
 import peparprov from './projects/peparprov.png';
 import imagestock from './projects/imagestock.png';
@@ -93,5 +94,6 @@ export {
   coverhunt,
   dcc,
   sevenpion,
+  balitower,
   microverse,
 };
