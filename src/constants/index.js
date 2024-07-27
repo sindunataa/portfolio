@@ -57,6 +57,10 @@ const services = [
     title: 'UI/UX Design',
     icon: ux,
   },
+  {
+    title: 'SQL Query',
+    icon: prototyping,
+  },
 
 ];
 
@@ -135,7 +139,7 @@ const experiences = [
     company_name: 'PT Bali Towerindo Sentra Tbk',
     icon: balitower,
     iconBg: '#333333',
-    date: 'March 2023 - Sept 2023',
+    date: 'March 2024 - NOW',
   },
 ];
 
