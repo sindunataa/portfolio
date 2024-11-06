@@ -49,6 +49,7 @@ import xynpict from './projects/xynpict.png';
 import portfolio from './projects/portfolio-v2.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
+import wina from './projects/winas.png';
 
 export {
   bwmap,
@@ -87,6 +88,7 @@ export {
   php,
   peparprov,
   imagestock,
+  wina,
   xynpict,
   portfolio,
   nyeusi,

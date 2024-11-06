@@ -18,6 +18,7 @@ import {
   python,
   peparprov,
   imagestock,
+  wina,
   xynpict,
   portfolio,
   nyeusi,
@@ -146,9 +147,9 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'Imagestock',
+    name: 'WINA',
     description:
-      'An innovative and efficient platform to manage and display your image galleries.',
+      'An innovative and efficient platform to book and manage your local andong rides.',
     tags: [
       {
         name: 'laravel',
@@ -163,9 +164,9 @@ const projects = [
         color: 'pink-text-gradient',
       },
     ],
-    image: imagestock,
-    repo: 'https://github.com/sindunataa/laravel-image-stock',
-    demo: 'http://mygallery.wuaze.com/',
+    image: wina,
+    repo: 'https://github.com/sindunataa/withwina',
+    demo: 'http://withwina.wuaze.com/',
   },
   {
     id: 'project-2',
