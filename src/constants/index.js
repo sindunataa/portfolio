@@ -147,7 +147,7 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'WINA',
+    name: 'WINA VACATION',
     description:
       'An innovative and efficient platform to book and manage your local andong rides.',
     tags: [
@@ -170,7 +170,7 @@ const projects = [
   },
   {
     id: 'project-2',
-    name: 'PEPARPROV',
+    name: 'PEPARPROV JATENG 2023',
     description: 'A Sport Event for Paralympic Week IV Central Java Province Pati Regency 2023.',
     tags: [
       {
