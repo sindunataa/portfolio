@@ -171,7 +171,7 @@ const projects = [
   {
     id: 'project-2',
     name: 'PEPARPROV JATENG 2023',
-    description: 'A Sport Event for Paralympic Week IV Central Java Province Pati Regency 2023.',
+    description: 'The Central Java Province Paralympic Week IV Sports Event which will be located in Pati Regency 2023.',
     tags: [
       {
         name: 'react',
