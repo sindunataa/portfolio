@@ -10,10 +10,17 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
   
   return (
     <motion.div
-      variants={fadeIn('up', 'spring', index * 0.01, 0.40)}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.4, delay: index * 0.1 }
+        }
+      }}
       className={`w-full mb-6 ${isFirstCard ? 'scroll-mt-32' : 'scroll-mt-20'}`}
       style={{ 
-        zIndex: isExpanded ? 50 : 10,
+        zIndex: isExpanded ? 40 - index : 10 + index,
         position: 'relative',
       }}
     >
@@ -45,10 +52,10 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                {project.tags.map((tag) => (
+                {project.tags && project.tags.map((tag) => (
                   <span
                     key={`${project.id}-${tag.name}`}
-                    className={`text-[11px] sm:text-[12px] md:text-[13px] font-poppins ${tag.color} bg-night/50 backdrop-blur-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-taupe/20`}
+                    className={`text-[11px] sm:text-[12px] md:text-[13px] font-poppins text-taupe bg-night/50 backdrop-blur-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-taupe/20`}
                   >
                     #{tag.name}
                   </span>
@@ -107,7 +114,7 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
                 }
               }}
               style={{ 
-                overflow: 'hidden',
+                overflow: 'visible',
               }}
             >
               <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 space-y-4 sm:space-y-5 md:space-y-6">
@@ -117,72 +124,78 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
                     Project Overview
                   </h4>
                   <p className="text-silver font-poppins text-[13px] sm:text-[14px] md:text-[15px] leading-[22px] sm:leading-[24px] md:leading-[26px] tracking-[0.5px] break-words">
-                    {project.detailedDescription}
+                    {project.detailedDescription || project.description}
                   </p>
                 </div>
 
                 {/* Technologies */}
-                <div>
-                  <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
-                    Technologies Used
-                  </h4>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {project.tech.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 sm:px-4 py-2 sm:py-2.5 bg-night/50 backdrop-blur-sm text-taupe font-poppins rounded-[8px] sm:rounded-[10px] text-[12px] sm:text-[13px] md:text-[14px] border border-taupe/20 hover:border-battleGray transition-colors break-words"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {project.tech && (
+                  <div>
+                    <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
+                      Technologies Used
+                    </h4>
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
+                      {project.tech.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 sm:px-4 py-2 sm:py-2.5 bg-night/50 backdrop-blur-sm text-taupe font-poppins rounded-[8px] sm:rounded-[10px] text-[12px] sm:text-[13px] md:text-[14px] border border-taupe/20 hover:border-battleGray transition-colors break-words"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Key Features */}
-                <div>
-                  <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
-                    Key Features
-                  </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
-                    {project.features.map((feature, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start gap-2 sm:gap-3 text-silver font-poppins"
-                      >
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-battleGray rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
-                        <span className="text-[12px] sm:text-[13px] md:text-[14px] leading-[20px] sm:leading-[22px] md:leading-[24px] tracking-[0.5px] break-words">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
+                {project.features && (
+                  <div>
+                    <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
+                      Key Features
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                      {project.features.map((feature, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 sm:gap-3 text-silver font-poppins"
+                        >
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-battleGray rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
+                          <span className="text-[12px] sm:text-[13px] md:text-[14px] leading-[20px] sm:leading-[22px] md:leading-[24px] tracking-[0.5px] break-words">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* My Contributions */}
-                <div>
-                  <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
-                    My Contributions
-                  </h4>
-                  <div className="space-y-2 sm:space-y-3">
-                    {project.contributions.map((contribution, idx) => (
-                      <div
-                        key={idx}
-                        className="flex gap-2 sm:gap-3 text-silver font-poppins"
-                      >
-                        <span className="text-battleGray mt-0.5 sm:mt-1 flex-shrink-0 font-bold">
-                          •
-                        </span>
-                        <p className="flex-1 text-[12px] sm:text-[13px] md:text-[14px] leading-[20px] sm:leading-[22px] md:leading-[24px] tracking-[0.5px] break-words">
-                          {contribution}
-                        </p>
-                      </div>
-                    ))}
+                {project.contributions && (
+                  <div>
+                    <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
+                      My Contributions
+                    </h4>
+                    <div className="space-y-2 sm:space-y-3">
+                      {project.contributions.map((contribution, idx) => (
+                        <div
+                          key={idx}
+                          className="flex gap-2 sm:gap-3 text-silver font-poppins"
+                        >
+                          <span className="text-battleGray mt-0.5 sm:mt-1 flex-shrink-0 font-bold">
+                            •
+                          </span>
+                          <p className="flex-1 text-[12px] sm:text-[13px] md:text-[14px] leading-[20px] sm:leading-[22px] md:leading-[24px] tracking-[0.5px] break-words">
+                            {contribution}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Impact/Results */}
                 {project.impact && (
-                  <div className="glassmorphism rounded-[14px] sm:rounded-[16px] p-4 sm:p-5 md:p-6 border border-battleGray/30">
+                  <div className="bg-night/40 rounded-[14px] sm:rounded-[16px] p-4 sm:p-5 md:p-6 border border-battleGray/30">
                     <h4 className="text-timberWolf font-beckman font-bold text-[16px] sm:text-[18px] md:text-[20px] mb-3 sm:mb-4 uppercase tracking-[0.5px] sm:tracking-[1px]">
                       Impact & Results
                     </h4>
@@ -221,9 +234,12 @@ const ProjectDetail = () => {
   const marginClass = expandedProject === 'prof-1' ? 'mt-0 pt-4' : '-mt-[6rem]';
 
   return (
-    <div className={`${marginClass} px-4 sm:px-6 transition-all duration-300`}>
+    <div className="px-4 sm:px-6 transition-all duration-300">
       {/* Section Header */}
-      <motion.div variants={textVariant()} className="relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
         <p className={`${styles.sectionSubText} text-[14px] sm:text-[16px] md:text-[18px]`}>
           Enterprise Level Work
         </p>
@@ -247,13 +263,19 @@ const ProjectDetail = () => {
 
       {/* Projects List */}
       <motion.div
-        variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
+        variants={{
+          show: {
+            transition: {
+              staggerChildren: 0.1,
+            }
+          }
+        }}
+        className="mx-auto flex flex-col mt-[30px] sm:mt-[40px] md:mt-[50px]"
       >
-        <div className="mt-[30px] sm:mt-[40px] md:mt-[50px] space-y-4 sm:space-y-5 md:space-y-6">
+        <div className="space-y-4 sm:space-y-5 md:space-y-6">
           {professionalProjects.map((project, index) => (
             <ProjectDetailCard
               key={project.id}
@@ -268,7 +290,8 @@ const ProjectDetail = () => {
 
       {/* Footer Note */}
       <motion.div
-        variants={fadeIn('up', 'spring', 0.5, 0.75)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         className="mt-8 sm:mt-10 md:mt-12 text-center"
       >
         <p className="text-taupe text-[12px] sm:text-[13px] md:text-[14px] font-poppins tracking-[0.5px] break-words px-4">
