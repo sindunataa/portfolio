@@ -20,15 +20,11 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
       }}
       className={`w-full mb-6 ${isFirstCard ? 'scroll-mt-32' : 'scroll-mt-20'}`}
       style={{ 
-        zIndex: isExpanded ? 40 - index : 10 + index,
         position: 'relative',
       }}
     >
       <div 
         className="bg-jetLight rounded-[20px] sm:rounded-[24px] card-shadow hover:card-shadow-hover transition-all duration-300"
-        style={{ 
-          position: 'relative',
-        }}
       >
         {/* Card Header - Always Visible */}
         <div
@@ -92,7 +88,7 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
         </div>
 
         {/* Expandable Details */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           {isExpanded && (
             <motion.div
               key="content"
@@ -102,7 +98,7 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
                 opacity: 1,
                 transition: {
                   height: { duration: 0.4, ease: "easeOut" },
-                  opacity: { duration: 0.25, delay: 0.15 }
+                  opacity: { duration: 0.3, delay: 0.1 }
                 }
               }}
               exit={{ 
@@ -110,11 +106,11 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
                 opacity: 0,
                 transition: {
                   height: { duration: 0.3, ease: "easeIn" },
-                  opacity: { duration: 0.2 }
+                  opacity: { duration: 0.15 }
                 }
               }}
               style={{ 
-                overflow: 'visible',
+                overflow: 'hidden',
               }}
             >
               <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 space-y-4 sm:space-y-5 md:space-y-6">
@@ -230,11 +226,8 @@ const ProjectDetail = () => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
   };
 
-  // Dinamis adjust negative margin berdasarkan expanded state
-  const marginClass = expandedProject === 'prof-1' ? 'mt-0 pt-4' : '-mt-[6rem]';
-
   return (
-    <div className="px-4 sm:px-6 transition-all duration-300">
+    <div className="px-4 sm:px-6">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
