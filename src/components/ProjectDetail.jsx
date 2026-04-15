@@ -58,7 +58,7 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </motion.div>
+            </div>
           </div>
 
           {/* Description — always visible, compact */}
@@ -185,81 +185,82 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
 };
 
 const ProjectDetail = () => {
-  const [expandedProject, setExpandedProject] = useState(null);
-
-  const handleToggle = (projectId) => {
-    setExpandedProject(expandedProject === projectId ? null : projectId);
-  };
-
-  // Dinamis adjust negative margin berdasarkan expanded state
-  const marginClass = expandedProject === 'prof-1' ? 'mt-0 pt-4' : '-mt-[6rem]';
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <div className="px-4 sm:px-6 transition-all duration-300">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <p className={`${styles.sectionSubText} text-[14px] sm:text-[16px] md:text-[18px]`}>
-          Enterprise Level Work
-        </p>
-        <h2 className={`${styles.sectionHeadTextLight} text-[28px] sm:text-[40px] md:text-[48px] lg:text-[60px]`}>
-          Professional Projects.
-        </h2>
-      </motion.div>
-
-      {/* Description */}
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn('', '', 0.1, 1)}
-          className="mt-3 sm:mt-4 text-taupe text-[14px] sm:text-[16px] md:text-[18px] max-w-3xl leading-[24px] sm:leading-[28px] md:leading-[30px] font-poppins tracking-[0.5px] break-words"
+    <>
+      <div className="px-4 sm:px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
         >
-          Here are the enterprise-level systems I've developed at PT Bali Towerindo Sentra Tbk,
-          focusing on inventory management, financial systems, and mobile API services.
-          Each project showcases my ability to build scalable, efficient, and reliable solutions
-          for complex business requirements.
-        </motion.p>
+          <p className={`${styles.sectionSubText} text-[14px] sm:text-[16px] md:text-[18px]`}>
+            Enterprise Level Work
+          </p>
+          <h2 className={`${styles.sectionHeadTextLight} text-[28px] sm:text-[40px] md:text-[48px] lg:text-[60px]`}>
+            Professional Projects.
+          </h2>
+        </motion.div>
+
+        {/* Description */}
+        <div className="w-full flex">
+          <motion.p
+            variants={fadeIn('', '', 0.1, 1)}
+            className="mt-3 sm:mt-4 text-taupe text-[14px] sm:text-[16px] md:text-[18px] max-w-3xl leading-[24px] sm:leading-[28px] md:leading-[30px] font-poppins tracking-[0.5px] break-words"
+          >
+            Here are the enterprise-level systems I've developed at PT Bali Towerindo Sentra Tbk,
+            focusing on inventory management, financial systems, and mobile API services.
+            Each project showcases my ability to build scalable, efficient, and reliable solutions
+            for complex business requirements.
+          </motion.p>
+        </div>
+
+        {/* Projects List */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          variants={{
+            show: {
+              transition: {
+                staggerChildren: 0.1,
+              }
+            }
+          }}
+          className="mx-auto flex flex-col mt-[30px] sm:mt-[40px] md:mt-[50px]"
+        >
+          <div className="space-y-4 sm:space-y-5 md:space-y-6">
+            {professionalProjects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Footer Note */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="mt-8 sm:mt-10 md:mt-12 text-center"
+        >
+          <p className="text-taupe text-[12px] sm:text-[13px] md:text-[14px] font-poppins tracking-[0.5px] break-words px-4">
+            Click on any project card to see detailed information about features, technologies, and my contributions.
+          </p>
+        </motion.div>
       </div>
 
-      {/* Projects List */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        variants={{
-          show: {
-            transition: {
-              staggerChildren: 0.1,
-            }
-          }
-        }}
-        className="mx-auto flex flex-col mt-[30px] sm:mt-[40px] md:mt-[50px]"
-      >
-        <div className="space-y-4 sm:space-y-5 md:space-y-6">
-          {professionalProjects.map((project, index) => (
-            <ProjectDetailCard
-              key={project.id}
-              project={project}
-              index={index}
-              isExpanded={expandedProject === project.id}
-              onToggle={() => handleToggle(project.id)}
-            />
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Footer Note */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="mt-8 sm:mt-10 md:mt-12 text-center"
-      >
-        <p className="text-taupe text-[12px] sm:text-[13px] md:text-[14px] font-poppins tracking-[0.5px] break-words px-4">
-          Click on any project card to see detailed information about features, technologies, and my contributions.
-        </p>
-      </motion.div>
-    </div>
+      {/* Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={selectedProject !== null}
+        onClose={() => setSelectedProject(null)}
+      />
+    </>
   );
 };
 
