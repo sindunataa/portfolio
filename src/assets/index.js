@@ -50,6 +50,10 @@ import portfolio from './projects/portfolio-v2.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
 import wina from './projects/winas.png';
+import misinternal_cencored from './projects/misinternal_cencored.png';
+import misptpim2_cencored from './projects/misptpim2_cencored.png';
+import salesorder_cencored from './projects/salesorder_cencored.png';
+import intranet_cencored from './projects/intranet_cencored.png';
 
 export {
   bwmap,
@@ -89,6 +93,10 @@ export {
   peparprov,
   imagestock,
   wina,
+  misinternal_cencored,
+  misptpim2_cencored,
+  salesorder_cencored,
+  intranet_cencored,
   xynpict,
   portfolio,
   nyeusi,

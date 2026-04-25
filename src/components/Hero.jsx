@@ -7,20 +7,20 @@ import { shaq, bwmap, worldmap } from '../assets';
 const Hero = () => {
   return (
     <>
-      <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
+      {/* <div className="absolute top-0 left-0 z-0 h-[100vh]">
         <img
           src={bwmap}
           alt="world map"
           className="w-full h-full sm:block hidden object-cover"
         />
       </div>
-      <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
+      <div className="absolute top-0 left-0 z-0 h-[100vh]">
         <img
           src={worldmap}
           alt="world map"
           className="w-full h-full sm:hidden block object-cover"
         />
-      </div>
+      </div> */}
       <section
         className="relative flex sm:flex-row flex-col w-full h-screen mx-auto 
         sm:bg-hero bg-hero-mobile overflow-hidden">

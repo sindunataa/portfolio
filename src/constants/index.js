@@ -21,6 +21,10 @@ import {
   wina,
   xynpict,
   portfolio,
+  misptpim2_cencored,
+  misinternal_cencored,
+  salesorder_cencored,
+  intranet_cencored,
   nyeusi,
   space,
   coverhunt,
@@ -121,11 +125,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: 'Backend Developer Internship',
-    company_name: 'PT Semesta Ruang Inovasi',
-    icon: sevenpion,
+    title: 'Application Developer',
+    company_name: 'PT Bali Towerindo Sentra Tbk',
+    icon: balitower,
     iconBg: '#333333',
-    date: 'Sept 2022 - Jan 2023',
+    date: 'March 2024 - NOW',
   },
   {
     title: 'Fullstack Developer Freelancer',
@@ -134,13 +138,13 @@ const experiences = [
     iconBg: '#333333',
     date: 'March 2023 - Sept 2023',
   },
-  {
-    title: 'ANALYST & APL DEVELOPMENT - BSS Developer',
-    company_name: 'PT Bali Towerindo Sentra Tbk',
-    icon: balitower,
+    {
+    title: 'Backend Developer Internship',
+    company_name: 'PT Semesta Ruang Inovasi',
+    icon: sevenpion,
     iconBg: '#333333',
-    date: 'March 2024 - NOW',
-  },
+    date: 'Sept 2022 - Jan 2023',
+  }
 ];
 
 const projects = [
@@ -239,248 +243,140 @@ const projects = [
 const professionalProjects = [
   {
     id: 'prof-1',
-    name: 'MIS Vendor — Inventory Movement',
-    subtitle: 'Internal & Vendor Inventory System',
+    image: misptpim2_cencored,
+    banner: misptpim2_cencored,
+    name: 'MIS Vendor',
+    subtitle: 'Inventory Movement System',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Enterprise System',
-    description: 'An integrated inventory movement management system for internal warehouses and vendors with material tracking.',
-    detailedDescription: 'A comprehensive inventory management system that handles inventory movements across internal warehouses and vendor facilities. The system supports material tracking, automated workflows, and seamless integration with Oracle Database to ensure data consistency.',
-    tech: ['Oracle Database', 'REST API', 'Workflow System', 'Codeigniter', 'JavaScript', 'Node.js'],
-    tags: [
-      { name: 'Oracle DB', color: 'blue-text-gradient' },
-      { name: 'Backend', color: 'green-text-gradient' },
-      { name: 'Enterprise', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'Material Inventory Tracking',
-      'Multi-level Approval Workflow',
-      'Audit Trail & Reporting',
-      'Oracle Database Integration',
-      'Inbound/Outbound Management',
-      'Material Request (MR) System',
-      'Data Synchronization with Finance/Procurement'
-    ],
+    stat: { value: '98%', label: 'Stock Accuracy' },
+    description: 'End-to-end inventory movement across internal warehouses and vendors, integrated with Oracle DB.',
+    tech: ['Oracle DB', 'CodeIgniter', 'REST API', 'Node.js'],
+    features: ['Material Tracking', 'Approval Workflow', 'Audit Trail', 'MR System', 'Finance Sync'],
     contributions: [
-      'Developed and optimized the inventory movement module between internal warehouses and vendors',
-      'Integrated Oracle Database to ensure data consistency for stock and transaction information',
-      'Enhanced stock accuracy through material tracking during inbound and outbound processes',
-      'Implemented approval workflow for Material Requests (MR) and goods issuance',
-      'Built reporting and audit trail features to support auditing and operational decision-making',
-      'Handled data synchronization between inventory modules and finance/procurement systems'
+      'Built inventory movement module between internal warehouses and vendors',
+      'Integrated Oracle DB for real-time stock and transaction consistency',
+      'Implemented MR approval workflow and goods issuance system',
+      'Developed audit trail and reporting for compliance',
     ],
-    impact: [
-      'Improved stock accuracy to 98%',
-      'Reduced approval processing time by 60%',
-      'Automated reporting for audit compliance'
-    ]
+    impact: ['98% stock accuracy', '60% faster approvals', 'Full audit compliance'],
   },
   {
     id: 'prof-2',
-    name: 'Sales Order — Billing & Payment',
-    subtitle: 'Automated Sales Management System',
+    image: salesorder_cencored,
+    banner: salesorder_cencored,
+    name: 'Sales Order & Billing Automation',
+    subtitle: 'Automated Sales Management',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Financial System',
-    description: 'Sales order, billing, and payment management system with automated integration to ERP and finance platforms.',
-    detailedDescription: 'An end-to-end sales management solution that automates the process from sales order creation to payment reconciliation, with seamless ERP and financial system integration.',
-    tech: ['ERP Integration', 'Laravel', 'Automation', 'Codeigniter', 'MySQL'],
-    tags: [
-      { name: 'ERP', color: 'blue-text-gradient' },
-      { name: 'Finance', color: 'green-text-gradient' },
-      { name: 'Automation', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'End-to-end Sales Process Automation',
-      'ERP Integration',
-      'Automated Billing',
-      'Payment Tracking',
-      'Financial Reporting',
-      'Invoice Generation'
-    ],
+    stat: { value: '90%', label: 'Billing Automated' },
+    description: 'Automated end-to-end sales, billing, and payment reconciliation with ERP integration.',
+    tech: ['Laravel', 'CodeIgniter', 'MySQL', 'ERP Integration'],
+    features: ['Sales Automation', 'ERP Integration', 'Auto Billing', 'Payment Tracking', 'Invoice Gen'],
     contributions: [
-      'Developed features for Sales Order recording, Billing, and Payment processes',
-      'Provided APIs for ERP and financial system integration to automate invoicing',
-      'Implemented payment tracking and reconciliation processes',
-      'Built monitoring dashboard to track payment status'
+      'Built Sales Order, Billing, and Payment recording modules',
+      'Provided ERP and finance system APIs for automated invoicing',
+      'Developed payment reconciliation and monitoring dashboard',
     ],
-    impact: [
-      'Automated 90% of the billing process',
-      'Reduced invoice errors by 95%',
-      'Accelerated payment reconciliation processes'
-    ]
+    impact: ['90% billing automated', '95% fewer invoice errors', 'Faster reconciliation'],
   },
   {
     id: 'prof-3',
-    name: 'Internal Management System',
-    subtitle: 'Internal Employee & Ticketing Platform',
+    image: intranet_cencored,
+    banner: intranet_cencored,
+    name: 'Internal Management',
+    subtitle: 'Employee & Ticketing Platform',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Internal Platform',
-    description: 'Internal platform for employee service management with structured ticketing and tracking.',
-    detailedDescription: 'A comprehensive internal platform for employee service requests, featuring a structured ticketing system with SLA monitoring and SSO authentication.',
-    tech: ['SSO Integration', 'Role Management', 'SLA Tracking', 'Codeigniter'],
-    tags: [
-      { name: 'SSO', color: 'blue-text-gradient' },
-      { name: 'Ticketing', color: 'green-text-gradient' },
-      { name: 'SLA', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'Employee Service Request Management',
-      'SLA-based Ticket Tracking',
-      'SSO Authentication',
-      'Role-based Access Control',
-      'Multi-department Support',
-      'Progress Dashboard'
-    ],
+    stat: { value: '95%', label: 'SLA Compliance' },
+    description: 'Internal service platform with SLA-based ticketing and SSO authentication for all departments.',
+    tech: ['CodeIgniter', 'SSO Integration', 'SLA Tracking', 'RBAC'],
+    features: ['Ticket Management', 'SLA Tracking', 'SSO Auth', 'Role-based Access', 'Multi-dept Support'],
     contributions: [
-      'Developed internal ticketing system for employee service requests',
-      'Implemented SLA tracking to ensure measurable response and resolution time',
-      'Integrated SSO login and role-based authorization for secure access control',
+      'Built internal ticketing system for employee service requests',
+      'Implemented SLA tracking for measurable response and resolution time',
+      'Integrated SSO and role-based authorization',
     ],
-    impact: [
-      'Improved response time by 70%',
-      'Achieved 95% SLA compliance rate',
-      'User satisfaction score of 4.5/5'
-    ]
+    impact: ['70% faster response', '95% SLA compliance', '4.5/5 satisfaction'],
   },
   {
     id: 'prof-4',
     name: 'E-Budget System',
-    subtitle: 'Internal Budget Planning & Monitoring',
+    subtitle: 'Budget Planning & Monitoring',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Financial Planning',
-    description: 'Budget planning and monitoring system with multi-level approval workflow and comprehensive reporting.',
-    detailedDescription: 'An enterprise budgeting system with real-time budget tracking, multi-level approval workflow, and comprehensive reporting features for financial planning.',
-    tech: ['Budget Planning', 'Multi-level Approval', 'Reporting', 'Finance Integration', 'Codeigniter', 'MySQL'],
-    tags: [
-      { name: 'Budget', color: 'blue-text-gradient' },
-      { name: 'Planning', color: 'green-text-gradient' },
-      { name: 'Finance', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'Department Budget Planning',
-      'Budget vs Actual Tracking',
-      'Multi-level Approval Workflow',
-      'Division-wide Reporting',
-      'Overspending Prevention',
-      'Budget Reallocation',
-      'Variance Analysis'
-    ],
+    stat: { value: '80%', label: 'Approval Efficiency' },
+    description: 'Enterprise budgeting with real-time tracking, multi-level approval, and division-wide reporting.',
+    tech: ['CodeIgniter', 'MySQL', 'Finance Integration'],
+    features: ['Dept Budget Planning', 'Budget vs Actual', 'Multi-level Approval', 'Variance Analysis', 'Reallocation'],
     contributions: [
-      'Developed budget planning and departmental budget submission modules',
-      'Automated the matching between actual spending and budget to prevent overspending',
-      'Provided reporting features for monitoring budget realization per division',
-      'Integrated multi-level approval workflow (Manager, Finance, BoD)'
+      'Built budget planning and departmental submission modules',
+      'Automated spending-vs-budget matching to prevent overspend',
+      'Integrated multi-level approval (Manager → Finance → BoD)',
+      'Developed division-wide budget realization reports',
     ],
-    impact: [
-      'Enhanced budget transparency',
-      'Improved approval process efficiency by 80%'
-    ]
+    impact: ['80% more efficient approvals', 'Full budget transparency'],
   },
   {
     id: 'prof-5',
+    image: misinternal_cencored,
+    banner: misinternal_cencored,
     name: 'MIS Internal',
-    subtitle: 'Inventory Movement Management',
+    subtitle: 'Inter-site Inventory Transfer',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Inventory System',
-    description: 'Inventory transfer management system between sites with audit support and structured control.',
-    detailedDescription: 'A site-to-site inventory transfer management system supporting field audit, item condition tracking, and comprehensive transfer history records.',
-    tech: ['Stock Management', 'Site Transfer', 'Audit Trail', 'Condition Tracking', 'PHP', 'Oracle DB'],
-    tags: [
-      { name: 'Inventory', color: 'blue-text-gradient' },
-      { name: 'Transfer', color: 'green-text-gradient' },
-      { name: 'Audit', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'Inter-site Stock Transfer',
-      'Field Audit Support',
-      'Stock Opname Management',
-      'Item Condition Tracking',
-      'History & Audit Trail',
-      'Transfer Request Workflow',
-      'Real-time Stock Updates'
-    ],
+    stat: { value: '100%', label: 'Audit Trail' },
+    description: 'Site-to-site inventory transfer with condition tracking, field audit support, and full traceability.',
+    tech: ['PHP', 'Oracle DB', 'Audit Trail', 'Condition Tracking'],
+    features: ['Inter-site Transfer', 'Field Audit', 'Stock Opname', 'Condition Tracking', 'Full History'],
     contributions: [
-      'Ensured structured and controlled inter-site stock transfer processes',
-      'Supported field audits and improved stock opname accuracy',
-      'Implemented item condition tracking (Good/Repair/Scrap)',
-      'Built history and traceability for every inventory item movement'
+      'Built structured inter-site stock transfer workflow',
+      'Implemented item condition tracking (Good / Repair / Scrap)',
+      'Developed full movement history and traceability per item',
     ],
-    impact: [
-      '100% audit trail compliance',
-      'Reduced transfer processing time by 50%'
-    ]
+    impact: ['100% audit trail coverage', '50% faster transfer processing'],
   },
   {
     id: 'prof-6',
     name: 'API Internal',
-    subtitle: 'Mobile API Services',
+    subtitle: 'Mobile Backend Services',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Backend API',
-    description: 'Backend API services for mobile operations, optimized for low-signal areas.',
-    detailedDescription: 'RESTful API backend for mobile operational activities with optimized performance for low-signal areas and secure authentication mechanisms.',
-    tech: ['REST API', 'Authentication', 'Low-signal Optimization', 'PHP'],
-    tags: [
-      { name: 'API', color: 'blue-text-gradient' },
-      { name: 'Backend', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'RESTful API Design',
-      'Secure Authentication',
-      'Optimized Response Time',
-      'Low-signal Support',
-      'Data Synchronization'
-    ],
+    stat: { value: '<200ms', label: 'Response Time' },
+    description: 'RESTful API backend for mobile operations, optimized for low-signal field environments.',
+    tech: ['PHP', 'REST API', 'Auth', 'Caching'],
+    features: ['REST API', 'Secure Auth', 'Low-signal Optimized', 'Offline Cache', 'Data Sync'],
     contributions: [
-      'Designed and developed REST APIs for operational mobile applications',
-      'Implemented authentication and authorization for secure data access',
-      'Optimized response time for better performance in low-signal areas',
-      'Built caching mechanisms to support offline capability'
+      'Designed REST APIs for field mobile applications',
+      'Implemented auth and authorization layer',
+      'Optimized for low-signal with caching and offline support',
     ],
-    impact: [
-      'Achieved API response time under 200ms',
-      'Supported 500+ concurrent users',
-    ]
+    impact: ['<200ms response time', '500+ concurrent users'],
   },
   {
     id: 'prof-7',
     name: 'API IKR',
-    subtitle: 'Cable Installation Mobile API',
+    subtitle: 'Cable Installation Field API',
     company: 'PT Bali Towerindo Sentra Tbk',
-    period: 'March 2024 - Present',
+    period: '2024 – Present',
     type: 'Field Operations API',
-    description: 'Backend API for technician cable installation processes with real-time reporting synchronization.',
-    detailedDescription: 'Mobile API designed for managing cable installation processes by technicians, featuring real-time field reporting and customer status synchronization.',
-    tech: ['Field Reporting', 'Real-time Sync', 'Technician App', 'PHP', 'MySQL'],
-    tags: [
-      { name: 'API', color: 'blue-text-gradient' },
-      { name: 'Field Ops', color: 'green-text-gradient' },
-      { name: 'Real-time', color: 'pink-text-gradient' },
-    ],
-    features: [
-      'Installation Process Management',
-      'Field Report Synchronization',
-      'Customer Status Updates',
-      'Photo Documentation',
-      'Real-time Progress Tracking',
-      'Digital Signature'
-    ],
+    stat: { value: '100%', label: 'Digital Docs' },
+    description: 'Mobile API for technician cable installation with real-time field reporting and customer sync.',
+    tech: ['PHP', 'MySQL', 'Real-time Sync'],
+    features: ['Installation Flow', 'Field Report Sync', 'Customer Updates', 'Photo Upload', 'Digital Signature'],
     contributions: [
-      'Developed backend API for IKR (Home Cable Installation) technician operations',
-      'Implemented field report synchronization to update customer status in real-time',
-      'Built photo upload and validation features for installation proof',
-      'Enabled real-time installation progress monitoring'
+      'Built API for IKR technician installation operations',
+      'Implemented real-time field report sync for customer status updates',
+      'Built photo upload and digital signature for installation proof',
     ],
-    impact: [
-      'Real-time installation tracking',
-      'Enhanced customer satisfaction',
-      'Achieved 100% digital documentation'
-    ]
-  }
+    impact: ['Real-time tracking', '100% digital documentation', 'Higher customer satisfaction'],
+  },
 ];
 
 

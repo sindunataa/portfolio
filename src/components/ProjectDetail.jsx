@@ -5,6 +5,58 @@ import { styles } from '../styles';
 import { professionalProjects } from '../constants';
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 
+const typeConfig = {
+  'Enterprise System':     { bg: '#444441', icon: 'monitor' },
+  'Financial System':      { bg: '#444441', icon: 'dollar' },
+  'Internal Platform':     { bg: '#444441', icon: 'users' },
+  'Financial Planning':    { bg: '#444441', icon: 'calendar' },
+  'Inventory System':      { bg: '#444441', icon: 'package' },
+  'Backend API':           { bg: '#444441', icon: 'code' },
+  'Field Operations API':  { bg: '#444441', icon: 'code' },
+};
+
+const icons = {
+  monitor: <path d="M2 3h20v14H2zM8 21h8M12 17v4" />,
+  dollar:  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />,
+  users:   <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>,
+  calendar:<><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01"/></>,
+  package: <><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></>,
+  code:    <><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></>,
+};
+
+const FallbackBanner = ({ project }) => {
+  const config = typeConfig[project.type] ?? { bg: '#444441', icon: 'code' };
+
+  return (
+    <div
+      className="relative w-full flex items-center justify-center overflow-hidden"
+      style={{ height: 'clamp(180px, 32vw, 360px)', background: config.bg }}
+    >
+      {/* subtle grid texture */}
+      <div className="absolute inset-0" style={{
+        backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 40px)'
+      }} />
+
+      <div className="relative z-10 flex flex-col items-center text-center gap-3">
+        <div className="flex items-center justify-center w-14 h-14 rounded-xl" style={{ background: 'rgba(255,255,255,0.12)' }}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5">
+            {icons[config.icon]}
+          </svg>
+        </div>
+        <div>
+          <p className="text-white font-medium text-lg m-0">{project.name}</p>
+          <p className="text-sm m-0" style={{ color: 'rgba(255,255,255,0.65)' }}>{project.subtitle}</p>
+        </div>
+      </div>
+
+      {/* bottom fade sama seperti banner asli */}
+      <div className="absolute inset-0" style={{
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(18,18,18,0.75) 100%)'
+      }} />
+    </div>
+  );
+};
+
 const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
   return (
     <motion.div
@@ -28,11 +80,15 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
           <div className="flex items-center gap-4 sm:gap-5">
 
             {/* Thumbnail */}
-            {project.image && (
-              <div className="flex-shrink-0 w-[56px] h-[56px] sm:w-[68px] sm:h-[68px] rounded-[12px] sm:rounded-[14px] overflow-hidden border border-taupe/20">
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover" loading="lazy" />
-              </div>
-            )}
+            <div
+              className="flex-shrink-0 w-[56px] h-[56px] sm:w-[68px] sm:h-[68px] rounded-[12px] sm:rounded-[14px] overflow-hidden border border-taupe/20 flex items-center justify-center"
+              style={{ background: typeConfig[project.type]?.bg ?? '#444441' }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="1.5">
+                {icons[typeConfig[project.type]?.icon ?? 'code']}
+              </svg>
+            </div>
+            
 
             {/* Title block */}
             <div className="flex-1 min-w-0">
@@ -90,16 +146,30 @@ const ProjectDetailCard = ({ project, index, isExpanded, onToggle }) => {
               }}
               style={{ overflow: 'hidden' }}
             >
+
               {/* Banner */}
-              {project.banner && (
+              {project.banner ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.15, ease: [0.4, 0, 0.2, 1] } }}
                   className="relative w-full overflow-hidden"
-                  style={{ height: 'clamp(140px, 24vw, 240px)' }}
+                  style={{ height: 'clamp(180px, 32vw, 360px)' }}
                 >
-                  <img src={project.banner} alt={`${project.name} banner`} className="w-full h-full object-cover" loading="lazy" />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(18,18,18,0.9) 100%)' }} />
+                  <img
+                    src={project.banner}
+                    alt={`${project.name} banner`}
+                    className="w-full h-full"
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(18,18,18,0.85) 100%)' }} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.15, ease: [0.4, 0, 0.2, 1] } }}
+                >
+                  <FallbackBanner project={project} />
                 </motion.div>
               )}
 
